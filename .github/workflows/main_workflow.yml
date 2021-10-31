@@ -1,15 +1,14 @@
-name: CI
+name: Java CI
 
-on: [pull_request]
+on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
-    
+      
       - name: Run check style
         uses: nikitasavinov/checkstyle-action@master
         with:
@@ -24,17 +23,9 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-
+      
       - name: Validate Gradle wrapper
         uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
-
+      
       - name: Build with Gradle
         run: ./gradlew build
-
-      - name: Publish Test Report
-        uses: mikepenz/action-junit-report@v2
-        if: always() # always run even if the previous step fails
-        with:
-          report_paths: '**/build/test-results/test/TEST-*.xml'
-          fail_on_failure: 'true'
-          require_tests: 'true'
