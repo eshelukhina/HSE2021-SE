@@ -41,7 +41,7 @@ public class HospitalTest {
     @Test
     public void testBasicCheckHospitalName() {
         clear();
-        String name = "name";
+        String name = "nam";
         assertTrue(HospitalService.checkHospitalName(name));
     }
 
