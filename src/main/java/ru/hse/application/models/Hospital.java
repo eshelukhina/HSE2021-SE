@@ -8,7 +8,7 @@ public class Hospital {
     private String address;
     private List<Integer> doctorIds;
 
-    public Hospital(String name, String address) {
+    public Hospital(String name, String address, List<Integer> doctorIds) {
 
     }
 
