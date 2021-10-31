@@ -9,9 +9,10 @@ public class Hospital {
     private List<Integer> doctorIds;
 
     public Hospital(String name, String address, List<Integer> doctorIds) {
-
+        this.name = name;
+        this.address = address;
+        this.doctorIds = doctorIds;
     }
-
 
     public Integer getId() {
         return id;

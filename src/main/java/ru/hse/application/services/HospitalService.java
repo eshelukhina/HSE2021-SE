@@ -1,18 +1,29 @@
 package ru.hse.application.services;
 
+import ru.hse.application.data.HospitalDatabase;
 import ru.hse.application.models.Hospital;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class HospitalService {
+    private final static Pattern pattern = Pattern.compile("^[a-z A-Z1-9]+$");
 
     public static Integer addHospital(Hospital hospital) {
-        return null;
+        if (!checkHospitalName(hospital.getName())) {
+            throw new IllegalArgumentException();
+        }
+        return HospitalDatabase.addHospital(hospital);
     }
 
     public static Hospital getHospitalById(Integer id) {
-        return null;
+        return HospitalDatabase.getHospitalById(id);
     }
 
     public static boolean checkHospitalName(String name) {
-        return true;
+        Matcher matcher = pattern.matcher(name);
+        System.out.println(name);
+        System.out.println(matcher.matches());
+        return matcher.matches();
     }
 }
