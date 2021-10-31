@@ -15,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class DoctorTest {
     public void clear() throws NotImplementedException {
         throw new NotImplementedException("");
+
     }
 
     @Test
