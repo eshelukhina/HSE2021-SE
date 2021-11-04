@@ -1,11 +1,9 @@
 package ru.hse.application;
 
-import jdk.jshell.spi.ExecutionControl.NotImplementedException;
 import org.junit.jupiter.api.Test;
+import ru.hse.application.data.DoctorDatabase;
 import ru.hse.application.models.Doctor;
-import ru.hse.application.models.Hospital;
 import ru.hse.application.services.DoctorService;
-import ru.hse.application.services.HospitalService;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -13,12 +11,12 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class DoctorTest {
-    public void clear() throws NotImplementedException {
-        throw new NotImplementedException("");
+    public void clear() {
+        DoctorDatabase.clear();
     }
 
     @Test
-    public void testBasicAddDoctor() throws NotImplementedException {
+    public void testBasicAddDoctor() {
         clear();
         Doctor expected_doctor = new Doctor("Jack", "Vorobey", Timestamp.valueOf("2001-09-03 00:00:00"),
                 "pediatrician", "boss of the gym", List.of(1, 2, 3));
@@ -35,7 +33,7 @@ public class DoctorTest {
     }
 
     @Test
-    public void testAddDoctorIncorrectName() throws NotImplementedException {
+    public void testAddDoctorIncorrectName() {
         clear();
         Doctor doctor = new Doctor("Пашка", "Эгипти", Timestamp.valueOf("2001-09-03 00:00:00"),
                 "pediatrician", "boss of the gym", List.of(1));
@@ -46,7 +44,7 @@ public class DoctorTest {
     }
 
     @Test
-    public void testCheckPatientBasic() throws NotImplementedException {
+    public void testCheckPatientBasic() {
         clear();
         Doctor expected_doctor = new Doctor("Jack", "Vorobey", Timestamp.valueOf("2001-09-03 00:00:00"),
                 "pediatrician", "boss of the gym", List.of(1));
