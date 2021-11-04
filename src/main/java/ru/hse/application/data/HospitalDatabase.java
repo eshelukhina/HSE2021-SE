@@ -20,4 +20,8 @@ public class HospitalDatabase {
         }
         return data.get(id);
     }
+
+    public static void clear(){
+        data.clear();
+    }
 }

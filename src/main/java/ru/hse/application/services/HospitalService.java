@@ -22,8 +22,6 @@ public class HospitalService {
 
     public static boolean checkHospitalName(String name) {
         Matcher matcher = pattern.matcher(name);
-        System.out.println(name);
-        System.out.println(matcher.matches());
         return matcher.matches();
     }
 }

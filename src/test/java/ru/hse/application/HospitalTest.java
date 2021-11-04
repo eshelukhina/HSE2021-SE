@@ -1,6 +1,7 @@
 package ru.hse.application;
 
 import org.junit.jupiter.api.Test;
+import ru.hse.application.data.HospitalDatabase;
 import ru.hse.application.models.Hospital;
 import ru.hse.application.services.HospitalService;
 
@@ -10,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class HospitalTest {
     public void clear() {
-
+        HospitalDatabase.clear();
     }
 
     @Test
