@@ -20,7 +20,7 @@ public class DoctorTest {
     @Test
     public void testBasicAddDoctor() throws NotImplementedException {
         clear();
-        Doctor expected_doctor = new Doctor("Jack", "Vorobey", Timestamp.valueOf("1999-01-01"),
+        Doctor expected_doctor = new Doctor("Jack", "Vorobey", Timestamp.valueOf("2001-09-03 00:00:00"),
                 "pediatrician", "boss of the gym", List.of(1, 2, 3));
         Integer id = DoctorService.addDoctor(expected_doctor);
         Doctor doctor = DoctorService.getDoctorById(id);
@@ -37,19 +37,18 @@ public class DoctorTest {
     @Test
     public void testAddDoctorIncorrectName() throws NotImplementedException {
         clear();
-        Doctor expected_doctor = new Doctor("Пашка", "Эгипти", Timestamp.valueOf("2001-09-03"),
+        Doctor doctor = new Doctor("Пашка", "Эгипти", Timestamp.valueOf("2001-09-03 00:00:00"),
                 "pediatrician", "boss of the gym", List.of(1));
-        Integer id = DoctorService.addDoctor(expected_doctor);
         assertThrows(
                 IllegalArgumentException.class,
-                () -> DoctorService.getDoctorById(id)
+                () -> DoctorService.addDoctor(doctor)
         );
     }
 
     @Test
     public void testCheckPatientBasic() throws NotImplementedException {
         clear();
-        Doctor expected_doctor = new Doctor("Пашка", "Эгипти", Timestamp.valueOf("2001-09-03"),
+        Doctor expected_doctor = new Doctor("Jack", "Vorobey", Timestamp.valueOf("2001-09-03 00:00:00"),
                 "pediatrician", "boss of the gym", List.of(1));
         Integer doctor_id = DoctorService.addDoctor(expected_doctor);
         assertTrue(DoctorService.checkPatient(doctor_id, 1));
