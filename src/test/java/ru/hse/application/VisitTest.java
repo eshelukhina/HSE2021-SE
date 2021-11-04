@@ -1,15 +1,10 @@
 package ru.hse.application;
 
-import jdk.jshell.spi.ExecutionControl.NotImplementedException;
-
 import org.junit.jupiter.api.Test;
-import ru.hse.application.models.Patient;
 import ru.hse.application.models.Visit;
 import ru.hse.application.models.Doctor;
 import ru.hse.application.models.Hospital;
 import ru.hse.application.services.DoctorService;
-import ru.hse.application.services.HospitalService;
-import ru.hse.application.services.PatientService;
 import ru.hse.application.services.VisitService;
 
 import java.sql.Timestamp;
@@ -38,7 +33,7 @@ public class VisitTest {
     }
 
     @Test
-    public void testAddVisitIncorrectName() throws NotImplementedException {
+    public void testAddVisitIncorrectName() {
         Doctor doctor = new Doctor("Jack", "Vorobey", Timestamp.valueOf("2001-09-03 00:00:00"),
                 "pediatrician", "boss of the gym", List.of(1));
         DoctorService.addDoctor(doctor);

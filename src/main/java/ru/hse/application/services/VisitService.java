@@ -1,6 +1,8 @@
 package ru.hse.application.services;
 
-import jdk.jshell.spi.ExecutionControl;
+import ru.hse.application.data.DoctorDatabase;
+import ru.hse.application.data.HospitalDatabase;
+import ru.hse.application.data.VisitDatabase;
 import ru.hse.application.models.Doctor;
 import ru.hse.application.models.Hospital;
 import ru.hse.application.models.Visit;
@@ -11,15 +13,29 @@ import java.util.Map;
 public class VisitService {
     private static final Map<Integer, Visit> data = new HashMap<>();
 
-    public static Integer addVisit(Visit visit) throws ExecutionControl.NotImplementedException {
-        throw new ExecutionControl.NotImplementedException("Not implemented yet.");
+    public static void addVisit(Visit visit) {
+        if (checkDoctor(visit.getDoctor()) && checkHospital(visit.getHospital())) {
+            VisitDatabase.addVisit(visit);
+            return;
+        }
+        throw new IllegalArgumentException("Not a valid visit's doctor or hospital");
     }
 
-    private boolean checkDoctor(Doctor doctor) throws ExecutionControl.NotImplementedException {
-        throw new ExecutionControl.NotImplementedException("Not implemented yet.");
+    private static boolean checkDoctor(Doctor doctor) {
+        try {
+            DoctorDatabase.getDoctorById(doctor.getId());
+            return true;
+        } catch (IllegalArgumentException e) {
+            return false;
+        }
     }
 
-    private boolean checkHospital(Hospital hospital) throws ExecutionControl.NotImplementedException {
-        throw new ExecutionControl.NotImplementedException("Not implemented yet.");
+    private static boolean checkHospital(Hospital hospital) {
+        try {
+            HospitalDatabase.getHospitalById(hospital.getId());
+            return true;
+        } catch (IllegalArgumentException e) {
+            return false;
+        }
     }
 }
