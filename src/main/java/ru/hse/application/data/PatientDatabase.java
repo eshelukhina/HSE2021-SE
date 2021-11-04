@@ -11,6 +11,7 @@ public class PatientDatabase {
     public static Integer addPatient(Patient patient)  {
         Integer nextId = data.size();
         data.put(nextId, patient);
+        patient.setId(nextId);
         return nextId;
     }
 

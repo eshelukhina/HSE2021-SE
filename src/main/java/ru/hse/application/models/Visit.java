@@ -1,7 +1,5 @@
 package ru.hse.application.models;
 
-import jdk.jshell.spi.ExecutionControl.NotImplementedException;
-
 import java.sql.Timestamp;
 
 public class Visit {
@@ -22,51 +20,51 @@ public class Visit {
         this.status = status;
     }
 
-    public Integer getId() throws NotImplementedException {
-        throw new NotImplementedException("");
+    public Integer getId() {
+        return this.id;
     }
 
-    public void setId(Integer id) throws NotImplementedException {
-        throw new NotImplementedException("");
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public Doctor getDoctor() throws NotImplementedException {
-        throw new NotImplementedException("");
+    public Doctor getDoctor() {
+        return this.doctor;
     }
 
-    public void setDoctor(Doctor doctor) throws NotImplementedException {
-        throw new NotImplementedException("");
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
     }
 
-    public Hospital getHospital() throws NotImplementedException {
-        throw new NotImplementedException("");
+    public Hospital getHospital() {
+        return this.hospital;
     }
 
-    public void setHospital(Hospital hospital) throws NotImplementedException {
-        throw new NotImplementedException("");
+    public void setHospital(Hospital hospital) {
+        this.hospital = hospital;
     }
 
-    public Timestamp getDate() throws NotImplementedException {
-        throw new NotImplementedException("");
+    public Timestamp getDate() {
+        return this.date;
     }
 
-    public void setDate(Timestamp date) throws NotImplementedException {
-        throw new NotImplementedException("");
+    public void setDate(Timestamp date) {
+        this.date = date;
     }
 
-    public String getInfo() throws NotImplementedException {
-        throw new NotImplementedException("");
+    public String getInfo() {
+        return this.info;
     }
 
-    public void setInfo(String info) throws NotImplementedException {
-        throw new NotImplementedException("");
+    public void setInfo(String info) {
+        this.info = info;
     }
 
-    public Boolean getStatus() throws NotImplementedException {
-        throw new NotImplementedException("");
+    public Boolean getStatus() {
+        return this.status;
     }
 
-    public void setStatus(Boolean status) throws NotImplementedException {
-        throw new NotImplementedException("");
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 }
