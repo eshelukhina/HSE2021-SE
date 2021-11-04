@@ -11,6 +11,10 @@ import java.util.regex.Pattern;
 public class PatientService {
     private final static Pattern pattern = Pattern.compile("^[a-z A-Z]+$");
 
+    public static Integer addPatient(Patient patient) throws NotImplementedException {
+        throw new NotImplementedException("Not implemented yet");
+    }
+
     public static Boolean checkPatientName(String name, String surname) throws NotImplementedException {
         throw new NotImplementedException("Not implemented yet");
     }
