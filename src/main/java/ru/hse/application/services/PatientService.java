@@ -24,7 +24,7 @@ public class PatientService {
         return matcher_name.matches() && matcher_surname.matches();
     }
 
-    public static Patient getPatientById(Integer id) throws NotImplementedException {
-        throw new NotImplementedException("Not implemented yet.");
+    public static Patient getPatientById(Integer id) throws IllegalArgumentException {
+        return PatientDatabase.getPatientById(id);
     }
 }

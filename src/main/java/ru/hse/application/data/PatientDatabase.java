@@ -14,6 +14,13 @@ public class PatientDatabase {
         return nextId;
     }
 
+    public static Patient getPatientById(Integer id) throws IllegalArgumentException {
+        if (!data.containsKey(id)) {
+            throw new IllegalArgumentException();
+        }
+        return data.get(id);
+    }
+
     public static void clear()  {
         data.clear();
     }
