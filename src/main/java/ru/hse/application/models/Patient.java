@@ -1,15 +1,16 @@
 package ru.hse.application.models;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 public class Patient extends Person {
 
     private Integer hospitalId;
-    private Integer medicalInsuranse;
-    private Integer passport;
+    private String medicalInsuranse;
+    private List<Integer> passport;
 
     public Patient(String name, String surname, Timestamp birthday,
-                   Integer hospitalId, Integer medicalInsuranse, Integer passport) {
+                   Integer hospitalId, String medicalInsuranse, List<Integer> passport) {
         super(name, surname, birthday);
         this.hospitalId = hospitalId;
         this.medicalInsuranse = medicalInsuranse;
@@ -24,19 +25,19 @@ public class Patient extends Person {
         this.hospitalId = hospitalId;
     }
 
-    public Integer getMedicalInsuranse() {
+    public String getMedicalInsuranse() {
         return medicalInsuranse;
     }
 
-    public void setMedicalInsuranse(Integer medicalInsuranse) {
+    public void setMedicalInsuranse(String medicalInsuranse) {
         this.medicalInsuranse = medicalInsuranse;
     }
 
-    public Integer getPassport() {
+    public List<Integer> getPassport() {
         return passport;
     }
 
-    public void setPassport(Integer passport) {
+    public void setPassport(List<Integer> passport) {
         this.passport = passport;
     }
 }
