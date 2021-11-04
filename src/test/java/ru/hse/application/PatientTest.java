@@ -3,7 +3,6 @@ package ru.hse.application;
 import jdk.jshell.spi.ExecutionControl.NotImplementedException;
 import org.junit.jupiter.api.Test;
 import ru.hse.application.models.Patient;
-import ru.hse.application.services.PatientService;
 
 import java.sql.Timestamp;
 import java.util.List;
