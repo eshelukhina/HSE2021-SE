@@ -3,6 +3,7 @@ package ru.hse.application.services;
 import ru.hse.application.data.DoctorDatabase;
 import ru.hse.application.models.Doctor;
 
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -18,6 +19,10 @@ public class DoctorService {
 
     public static Doctor getDoctorById(Integer id) throws IllegalArgumentException {
         return DoctorDatabase.getDoctorById(id);
+    }
+
+    public static Optional<Doctor> getDoctor(String name, String surname) {
+        return DoctorDatabase.getDoctor(name, surname);
     }
 
     public static Boolean checkDoctorName(String name) {
