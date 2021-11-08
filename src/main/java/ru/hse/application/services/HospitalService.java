@@ -3,6 +3,8 @@ package ru.hse.application.services;
 import ru.hse.application.data.HospitalDatabase;
 import ru.hse.application.models.Hospital;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -16,8 +18,16 @@ public class HospitalService {
         return HospitalDatabase.addHospital(hospital);
     }
 
-    public static Hospital getHospitalById(Integer id) {
+    public static Optional<Hospital> getHospitalById(Integer id) {
         return HospitalDatabase.getHospitalById(id);
+    }
+
+    public static Optional<List<Hospital>> getHospitals(String hospitalName) {
+        return HospitalDatabase.getHospitals(hospitalName);
+    }
+
+    public static void addDoctor(Integer doctor_id, Integer hospital_id) {
+        HospitalDatabase.addDoctor(doctor_id, hospital_id);
     }
 
     public static boolean checkHospitalName(String name) {

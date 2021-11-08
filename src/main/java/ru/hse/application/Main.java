@@ -1,11 +1,7 @@
 package ru.hse.application;
 
-import ru.hse.application.commands.AddDoctor;
-import ru.hse.application.commands.Command;
-import ru.hse.application.commands.GetDoctor;
+import ru.hse.application.commands.*;
 
-import java.awt.*;
-import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
 
@@ -16,7 +12,13 @@ public class Main {
         System.out.println("Welcome to Госуслуги. Медицина!");
         System.out.println("Список доступных комманд:");
         System.out.println("* add doctor - добавить доктора в систему");
-        System.out.println("* get doctor - найти доктора");
+        System.out.println("* add hospital - добавить больницу в систему");
+        System.out.println("* add doctor to hospital - поиск среди докторов по имени и фамилии");
+        System.out.println();
+        System.out.println("* get doctors - поиск среди докторов по имени и фамилии");
+        System.out.println("* get hospitals - поиск больницы по названию");
+        System.out.println();
+        System.out.println("* exit - закрыть программу");
         System.out.println();
         System.out.println("Введите команду...");
         while (in.hasNext()){
@@ -25,9 +27,21 @@ public class Main {
                 case ("add doctor"):
                     command =  Optional.of(new AddDoctor());
                     break;
-                case ("get doctor"):
-                    command = Optional.of(new GetDoctor());
+                case ("add hospital"):
+                    command = Optional.of(new AddHospital());
                     break;
+                case ("add doctor to hospital"):
+                    command = Optional.of(new AddDoctorToHospital());
+                    break;
+                case ("get doctors"):
+                    command = Optional.of(new GetDoctors());
+                    break;
+                case ("get hospitals"):
+                    command = Optional.of(new GetHospitals());
+                    break;
+                case ("exit"):
+                    System.out.println("Выключаемся. До скорой встречи!");
+                    return;
             }
             if (command.isEmpty()) {
                 System.out.println("Неизвестная команда, попробуйте снова");
