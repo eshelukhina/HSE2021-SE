@@ -39,4 +39,13 @@ public class Doctor extends Person{
     public void setPatientIds(List<Integer> patientIds) {
         this.patientIds = patientIds;
     }
+
+    @Override
+    public String toString() {
+        return  "Doctor info:\n" +
+                "name: " + getName() + '\n' +
+                "surname:" + getSurname() + '\n'+
+                "specialization: " + specialization + '\n' +
+                "position:" + position;
+    }
 }
