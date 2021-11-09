@@ -1,11 +1,44 @@
-# HSE2021-SE
+# Gosuslugi.Medicine
 
 <!-- Add buttons here -->
 
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/eshelukhina/HSE2021-SE?include_prereleases)
+[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/eshelukhina/HSE2021-SE?include_prereleases)](https://github.com/eshelukhina/HSE2021-SE/releases)
 [![License](https://img.shields.io/github/license/eshelukhina/HSE2021-SE)](https://github.com/eshelukhina/HSE2021-SE/blob/main/LICENSE)
 [![Build](https://github.com/eshelukhina/HSE2021-SE/actions/workflows/main_workflow.yml/badge.svg)](https://github.com/eshelukhina/HSE2021-SE/actions/workflows/main_workflow.yml)
 
 <!-- Describe your project in brief -->
 
-### [Ссылка на презентацию](https://docs.google.com/presentation/d/1TxEXXcMWpvSwv1GY_gKuPFU5ftwqNd2J7syRATtkBzk/edit?usp=sharing)
+# Table of Contents
+1. [Description](#Description)
+2. [RoadMap](#RoadMap)
+3. [Authors](#Authors)
+4. [License](#License)
+
+## Description
+A service system for creating digital interaction between doctors and patients.
+
+**Patients:**
+* access to the results of medical examinations
+* history of visits
+* electronic appointment with a doctor
+
+**Doctors:**
+* transition from paper document flow to electronic
+* access to data from other clinics
+* prompt provision of information to emergency workers
+
+**More information:** [presentation](https://docs.google.com/presentation/d/1TxEXXcMWpvSwv1GY_gKuPFU5ftwqNd2J7syRATtkBzk/edit?usp=sharing) about this project
+
+## RoadMap
+
+Our plans are available on [GitHub Projects](https://github.com/eshelukhina/HSE2021-SE/projects/1)
+
+## Authors
+* [Daniel Gabitov](https://github.com/DanielGabitov)
+* [Pavel Egipti](https://github.com/egiptipavel)
+* [Anastasia Chaikova](https://github.com/achaikova)
+* [Ekaterina Shelukhina](https://github.com/eshelukhina)
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
