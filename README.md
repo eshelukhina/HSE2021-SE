@@ -11,8 +11,9 @@
 # Table of Contents
 1. [Description](#Description)
 2. [RoadMap](#RoadMap)
-3. [Authors](#Authors)
-4. [License](#License)
+3. [Build and run](#Build and run)
+4. [Authors](#Authors)
+5. [License](#License)
 
 ## Description
 A service system for creating digital interaction between doctors and patients.
@@ -32,6 +33,39 @@ A service system for creating digital interaction between doctors and patients.
 ## RoadMap
 
 Our plans are available on [GitHub Projects](https://github.com/eshelukhina/HSE2021-SE/projects/1)
+
+## Build and run
+```
+./gradlew build
+./gradlew run
+```
+
+## Example of usage
+```
+Введите команду...
+add doctor
+Введите имя доктора
+Ekaterina
+Введите фамилию доктора
+Shelukhina
+Введите специализацию доктора
+surgeon
+Введите должность доктора
+intern
+Введите следующую команду...
+get doctors
+Введите имя доктора
+Ekaterina
+Введите фамилию доктора
+Shelukhina
+------------------------
+doctor_id: 0
+name: Ekaterina
+surname:Shelukhina
+specialization: surgeon
+position:intern
+------------------------
+```
 
 ## Authors
 * [Daniel Gabitov](https://github.com/DanielGabitov)
