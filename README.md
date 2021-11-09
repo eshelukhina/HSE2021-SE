@@ -11,7 +11,7 @@
 # Table of Contents
 1. [Description](#Description)
 2. [RoadMap](#RoadMap)
-3. [Build and run](#Build and run)
+3. [Build and run](#BuildAndRun)
 4. [Authors](#Authors)
 5. [License](#License)
 
