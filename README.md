@@ -1,5 +1,4 @@
 # Gosuslugi.Medicine
-
 <!-- Add buttons here -->
 
 [![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/eshelukhina/HSE2021-SE?include_prereleases)](https://github.com/eshelukhina/HSE2021-SE/releases)
@@ -7,6 +6,8 @@
 [![Build](https://github.com/eshelukhina/HSE2021-SE/actions/workflows/main_workflow.yml/badge.svg)](https://github.com/eshelukhina/HSE2021-SE/actions/workflows/main_workflow.yml)
 
 <!-- Describe your project in brief -->
+
+Higher School of Economics university study project -- SE Course
 
 # Table of Contents
 1. [Description](#Description)
