@@ -2,9 +2,7 @@ package ru.hse.application.data;
 
 import ru.hse.application.models.Doctor;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class DoctorDatabase {
     private static final Map<Integer, Doctor> data = new HashMap<>();
@@ -16,20 +14,22 @@ public class DoctorDatabase {
         return nextId;
     }
 
-    public static Doctor getDoctorById(Integer id) throws IllegalArgumentException {
+    public static Optional<Doctor> getDoctorById(Integer id) throws IllegalArgumentException {
         if (!data.containsKey(id)) {
-            throw new IllegalArgumentException();
+            return Optional.empty();
         }
-        return data.get(id);
+        return Optional.of(data.get(id));
     }
 
-    public static Optional<Doctor> getDoctor(String name, String surname) {
+    public static Optional<List<Doctor>> getDoctors(String name, String surname) {
+        List<Doctor> result = new LinkedList<>();
         for (Doctor doctor : data.values()){
             if (name.equals(doctor.getName()) && surname.equals(doctor.getSurname())){
-                return Optional.of(doctor);
+                result.add(doctor);
             }
         }
-        return Optional.empty();
+        if (result.isEmpty()) return Optional.empty();
+        return Optional.of(result);
     }
 
     public static void clear() {

@@ -1,14 +1,14 @@
 package ru.hse.application.models;
 
-import java.util.List;
+import java.util.Set;
 
 public class Hospital {
     private Integer id;
     private final String name;
     private final String address;
-    private final List<Integer> doctorIds;
+    private Set<Integer> doctorIds;
 
-    public Hospital(String name, String address, List<Integer> doctorIds) {
+    public Hospital(String name, String address, Set<Integer> doctorIds) {
         this.name = name;
         this.address = address;
         this.doctorIds = doctorIds;
@@ -30,7 +30,15 @@ public class Hospital {
         return address;
     }
 
-    public List<Integer> getDoctorIds() {
+    public Set<Integer> getDoctorIds() {
         return doctorIds;
+    }
+
+    @Override
+    public String toString() {
+        return  "hospital_id: " + id + '\n' +
+                "name: " + name + '\n' +
+                "address: " + address + '\n' +
+                "doctors_ids: " + doctorIds + '\n';
     }
 }

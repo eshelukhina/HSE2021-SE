@@ -3,6 +3,7 @@ package ru.hse.application.services;
 import ru.hse.application.data.DoctorDatabase;
 import ru.hse.application.models.Doctor;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -17,12 +18,12 @@ public class DoctorService {
         throw new IllegalArgumentException("Not a valid doctor's name");
     }
 
-    public static Doctor getDoctorById(Integer id) throws IllegalArgumentException {
+    public static Optional<Doctor> getDoctorById(Integer id) {
         return DoctorDatabase.getDoctorById(id);
     }
 
-    public static Optional<Doctor> getDoctor(String name, String surname) {
-        return DoctorDatabase.getDoctor(name, surname);
+    public static Optional<List<Doctor>> getDoctors(String name, String surname) {
+        return DoctorDatabase.getDoctors(name, surname);
     }
 
     public static Boolean checkDoctorName(String name) {
@@ -31,6 +32,8 @@ public class DoctorService {
     }
 
     public static Boolean checkPatient(Integer doctor_id, Integer patient_id) throws IllegalArgumentException {
-        return getDoctorById(doctor_id).getPatientIds().contains(patient_id);
+        var doctor = getDoctorById(doctor_id);
+        if (doctor.isEmpty()) throw new IllegalArgumentException();
+        return doctor.get().getPatientIds().contains(patient_id);
     }
 }

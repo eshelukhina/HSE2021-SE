@@ -21,15 +21,15 @@ public class DoctorTest {
         Doctor expected_doctor = new Doctor("Jack", "Vorobey", Timestamp.valueOf("2001-09-03 00:00:00"),
                 "pediatrician", "boss of the gym", List.of(1, 2, 3));
         Integer id = DoctorService.addDoctor(expected_doctor);
-        Doctor doctor = DoctorService.getDoctorById(id);
-        assertNotNull(doctor);
+        var doctor = DoctorService.getDoctorById(id);
+        assert(doctor.isPresent());
 
-        assertEquals(expected_doctor.getName(), doctor.getName());
-        assertEquals(expected_doctor.getSurname(), doctor.getSurname());
-        assertEquals(expected_doctor.getBirthday(), doctor.getBirthday());
-        assertEquals(expected_doctor.getSpecialization(), doctor.getSpecialization());
-        assertEquals(expected_doctor.getPosition(), doctor.getPosition());
-        assertEquals(expected_doctor.getPatientIds(), doctor.getPatientIds());
+        assertEquals(expected_doctor.getName(), doctor.get().getName());
+        assertEquals(expected_doctor.getSurname(), doctor.get().getSurname());
+        assertEquals(expected_doctor.getBirthday(), doctor.get().getBirthday());
+        assertEquals(expected_doctor.getSpecialization(), doctor.get().getSpecialization());
+        assertEquals(expected_doctor.getPosition(), doctor.get().getPosition());
+        assertEquals(expected_doctor.getPatientIds(), doctor.get().getPatientIds());
     }
 
     @Test

@@ -6,6 +6,7 @@ import ru.hse.application.models.Hospital;
 import ru.hse.application.services.HospitalService;
 
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,26 +18,26 @@ public class HospitalTest {
     @Test
     public void testBasicAddHospital() {
         clear();
-        Integer id = HospitalService.addHospital(new Hospital("name", "address", List.of()));
-        Hospital hospital = HospitalService.getHospitalById(id);
-        assertNotNull(hospital);
+        Integer id = HospitalService.addHospital(new Hospital("name", "address", Set.of()));
+        var hospital = HospitalService.getHospitalById(id);
+        assert(hospital.isPresent());
     }
 
     @Test
     public void testAddHospital() {
         clear();
-        Integer id = HospitalService.addHospital(new Hospital("name", "address", List.of()));
-        Hospital hospital = HospitalService.getHospitalById(id);
-        assertNotNull(hospital);
-        assertEquals("name", hospital.getName());
-        assertEquals("address", hospital.getAddress());
+        Integer id = HospitalService.addHospital(new Hospital("name", "address", Set.of()));
+        var hospital = HospitalService.getHospitalById(id);
+        assert (hospital.isPresent());
+        assertEquals("name", hospital.get().getName());
+        assertEquals("address", hospital.get().getAddress());
     }
 
     @Test
     public void testAddHospitalFail() {
         clear();
         assertThrows(IllegalArgumentException.class,
-                () -> HospitalService.addHospital(new Hospital("name_!", "address", List.of())));
+                () -> HospitalService.addHospital(new Hospital("name_!", "address", Set.of())));
     }
 
     @Test
