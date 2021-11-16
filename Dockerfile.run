@@ -1,0 +1,15 @@
+FROM gradle:7.2.0-jdk11-alpine AS build
+
+COPY --chown=gradle:gradle . /src
+
+WORKDIR /src
+
+RUN gradle build
+
+FROM openjdk:11-jre-slim
+
+RUN mkdir /app
+
+COPY --from=build /src/build/libs/*.jar /app/hse-2021.jar
+
+ENTRYPOINT ["java", "-jar", "/app/hse-2021.jar"]

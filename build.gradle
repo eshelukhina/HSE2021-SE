@@ -36,3 +36,15 @@ autoLintGradle {
 
 apply plugin: 'application'
 mainClassName = 'ru.hse.application.Main'
+
+run {
+    standardInput = System.in
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'ru.hse.application.Main'
+        )
+    }
+}
