@@ -68,6 +68,20 @@ position:intern
 ------------------------
 ```
 
+## Docker
+**Create image for building a project and running tests:**
+```
+docker build -f Dockerfile.build -t hse-2021 .
+```
+**Create image for running a project:**
+```
+docker build -f Dockerfile.run -t hse-2021 .
+```
+**Run container:**
+```
+docker run -i --name hse-2021 hse-2021
+```
+
 ## Authors
 * [Daniel Gabitov](https://github.com/DanielGabitov)
 * [Pavel Egipti](https://github.com/egiptipavel)
