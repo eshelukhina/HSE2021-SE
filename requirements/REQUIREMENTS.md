@@ -20,6 +20,8 @@
 * Answers users' questions related to the operation of the site
 * Give recommendations on the appointments
 
+## Use case
+![alt text](uml_diagram.jpg)
 
 ## User stories
 
@@ -48,10 +50,10 @@ As a moderator, I want to help users make heads and tails of our service
 ## Job stories
 
 #### Job story №1
-After a user has visited hospital, I want them to share feedback, so I can let them leave a review
+When a user has visited hospital, I want them to share feedback, so I can let them leave a review
 
 #### Job story №2
-When user buys a subscription/a book I want to save their purchases, so I can allow them signing up & signing in
+When there are a lot of people waiting in the queue, I want to differ person who has an appointment, so I can prioritize people with appointments
 
 #### Job story №3
-When user read a book I want them to share their opinion on this book, so I can let them leave a review
+When patient wants to make an appointment, I want to rate doctors, so I can recommend best-suited doctor
